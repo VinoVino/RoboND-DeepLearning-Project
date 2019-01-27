@@ -25,7 +25,13 @@ The final score is the pixelwise `average_IoU*(n_true_positive/(n_true_positive+
 
 **Ideas for Improving your Score**
 
-Collect more data from the sim. Look at the predictions think about what the network is getting wrong, then collect data to counteract this. Or improve your network architecture and hyperparameters. 
+* Collect more data from the sim. 
+
+* Decreasing the stride --The amount by which the filter slides. Decreasing the stride increases the size of your model by increasing the number of total patches each layer observes- which results in improved accuracy at the expense of increased computational load.
+
+* Increase the connections of neurons to each patch by increasing the filter depth.  This can be done by increasing hyperparameter height of K in the layers.
+
+
 
 
 
