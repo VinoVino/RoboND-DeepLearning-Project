@@ -4,8 +4,11 @@
 
 ## Model ##
 ![image1](model.png)
+
 ## Hyperparameters ##
 ![image2](hyperparam.png)
+
+* The hyperparameters were empirically tested. Given the limited computational power of the setup, I was conservative with the parameters.  Overall, the analysis still took over 4 hours to complete.
 
 ## Scoring ##
 
