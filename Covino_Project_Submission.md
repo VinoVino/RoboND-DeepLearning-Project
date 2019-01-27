@@ -5,7 +5,7 @@
 ## Model ##
 
 ## Hyperparameters ##
-![image1](./hyperparam.jpg)
+![image1](hyperparam.jpg)
 
 ## Scoring ##
 
