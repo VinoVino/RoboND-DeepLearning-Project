@@ -2,18 +2,26 @@
 
 ## Deep Learning Project ##
 This project illustrates the training of a fully convolutional network (FCN) to identify target-person from a simulated drone camera feed. 
-
-Inaddition to the FCN doing the convolution, it preserves the spatial information throughout the entire network with the use of semantic segmentation.  The image below illustrates the model used to complete the project.
+The FCN is used to provide semantic segmentation of input images.
+The FCN does the convolution and preserves the spatial information throughout the entire network with the use of semantic segmentation.  The image below illustrates the model used to complete the project.
 
 ## Model Used ##
+
 * 2 Encoders with a filter size of 32 and 64 respectively, with a stride of 2
+The two encorders contain individual convolution layers. Each layer is discerning the unique features or characteristics that discern the images or make them unique. The use of multiple encoders or convolution layers builds the depth of the segmentation and strengthens the overall classifier. Overall, this left half produces feature vectures to identify the object.
+
 * 1 x 1 convolution layer with a filter size of 128, and the standard kernel and stride size of 1
+The 1x1 convolution layers flattens the data for classification, in addition to retaining the spatial data. 
+
 * 2 Decoders with a filter size of 64 and 32 respectively, with a stride of 2.
-The output layer implements a softmax function to the decoder block-2's output.
+The output layer implements a softmax function to the decoder block-2's output.  The final output is segmentation. 
+Overall, this right half decodes the information from the right half to provide predictions.
 
 
 
 ![image1](model.png)
+The left half of the network maps RGB image pixels to a collection of feature data. The right half produces image segmentation using the the identified feature data from the left half. The output is converted back into the original rgb pixel format, and prodives the means for input image predictions.
+
 
 ## Hyperparameters ##
 ![image2](hyperparam.png)
