@@ -54,7 +54,7 @@ The final score is not very good, with a score just above the passing criteria.
 
 * Increase the connections of neurons to each patch by increasing the filter depth.  This can be done by increasing hyperparameter height of K in the layers.
 
-* Increase the number of encoder convulation layers. This will enrich the feature depth and improve segmentation.
+* Increase the number of encoder convolution layers. This will enrich the feature depth and improve segmentation.
 
 
 ## Final Notes 
