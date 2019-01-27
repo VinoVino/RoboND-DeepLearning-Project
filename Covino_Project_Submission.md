@@ -8,19 +8,19 @@ The FCN does the convolution and preserves the spatial information throughout th
 ## Model Used ##
 
 * 2 Encoders with a filter size of 32 and 64 respectively, with a stride of 2
-The two encorders contain individual convolution layers. Each layer is discerning the unique features or characteristics that discern the images or make them unique. The use of multiple encoders or convolution layers builds the depth of the segmentation and strengthens the overall classifier. Overall, this left half produces feature vectures to identify the object.
+  * The two encorders contain individual convolution layers. Each layer is discerning the unique features or characteristics that discern   the images or make them unique. The use of multiple encoders or convolution layers builds the depth of the segmentation and strengthens   the overall classifier. Overall, this left half produces feature vectures to identify the object.
 
 * 1 x 1 convolution layer with a filter size of 128, and the standard kernel and stride size of 1
-The 1x1 convolution layers flattens the data for classification, in addition to retaining the spatial data. 
+  * The 1x1 convolution layers flattens the data for classification, in addition to retaining the spatial data. 
 
 * 2 Decoders with a filter size of 64 and 32 respectively, with a stride of 2.
-The output layer implements a softmax function to the decoder block-2's output.  The final output is segmentation. 
-Overall, this right half decodes the information from the right half to provide predictions.
+  * The output layer implements a softmax function to the decoder block-2's output.  The final output is segmentation. 
+  Overall, this right half decodes the information from the right half to provide predictions.
 
 
 
 ![image1](model.png)
-The left half of the network maps RGB image pixels to a collection of feature data. The right half produces image segmentation using the the identified feature data from the left half. The output is converted back into the original rgb pixel format, and prodives the means for input image predictions.
+* The left half of the network maps RGB image pixels to a collection of feature data. The right half produces image segmentation using the the identified feature data from the left half. The output is converted back into the original rgb pixel format, and prodives the means for input image predictions.
 
 
 ## Hyperparameters ##
@@ -43,6 +43,8 @@ Using the above the number of detection true_positives, false positives, false n
 The final score is the pixelwise `average_IoU*(n_true_positive/(n_true_positive+n_false_positive+n_false_negative))` on data similar to that provided in sample_evaulation_data
 ![image3](final_score.png)
 
+The final score is not very good, with a score just above the passing criteria.
+
 
 **Ideas for Improving your Score**
 
@@ -51,6 +53,8 @@ The final score is the pixelwise `average_IoU*(n_true_positive/(n_true_positive+
 * Decreasing the stride --The amount by which the filter slides. Decreasing the stride increases the size of your model by increasing the number of total patches each layer observes- which results in improved accuracy at the expense of increased computational load.
 
 * Increase the connections of neurons to each patch by increasing the filter depth.  This can be done by increasing hyperparameter height of K in the layers.
+
+* Increase the number of encoder convulation layers. This will enrich the feature depth and improve segmentation.
 
 
 ## Final Notes 
