@@ -5,7 +5,7 @@
 ## Model ##
 
 ## Hyperparameters ##
-![image1](hyperparam.jpg)
+![image1](hyperparam.png)
 
 ## Scoring ##
 
@@ -20,7 +20,7 @@ Using the above the number of detection true_positives, false positives, false n
 ** Final score**
 
 The final score is the pixelwise `average_IoU*(n_true_positive/(n_true_positive+n_false_positive+n_false_negative))` on data similar to that provided in sample_evaulation_data
-![image2](./final_score.jpg)
+![image2](final_score.png)
 
 
 **Ideas for Improving your Score**
